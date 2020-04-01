@@ -135,6 +135,10 @@
             "type": "object",
             "description": "Information about the recording associated with the call record",
             "properties": {
+                "recordID": {
+                    "type": "string",
+                    "description": "The id of the file as stored"
+                },
                 "fileName": {
                     "type": "string",
                     "example": "sPK-20160517-163415-johnsmith-1165020038-1.m4a",
