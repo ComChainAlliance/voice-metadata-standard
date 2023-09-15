@@ -224,19 +224,22 @@
                     "example": "sPK-20160517-163415-johnsmith-1165020038-1.m4a",
                     "description": "The name of the file as stored"
                 },
-                "fileType": {
+                "mimeType": {
                     "type": "string",
-                    "description": "Type of File",
-                    "enum": [
-                        "audioVideo",
-                        "audio",
-                        "video",
-                        "image",
-                        "text",
-                        "json",
-                        "xml",
-                        "other"
-                    ]
+                    "example": "audio/mpeg",
+                    "description": "Two-part identifier for file formats."
+                },
+                "content": {
+                    "type": "string",
+                    "example": "audio,transcription,text,ect..",
+                    "description": "Identifier for file content."
+                },
+                "tags":  {
+                    "type": "array",
+                    "description": "File Tags",
+                    "items": {
+                        "$ref": "#/definitions/fileTag"
+                    }
                 },
                 "fileLocation": {
                     "type": "string",
@@ -280,6 +283,18 @@
                             "description": "Checksum of the file in the selected hash type"
                         }
                     }
+                }
+            }
+        },
+        "fileTag": {
+            "type": "object",
+            "description": "Key/Value tags",
+            "properties": {
+                "key": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
                 }
             }
         }
